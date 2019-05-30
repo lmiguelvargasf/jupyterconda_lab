@@ -12,7 +12,7 @@ and JavaScript code taking advantage of Jupyter's features.
 In order to build the image using the provided Dockerfile run:
 
 ```bash
-docker build -t conda-stack-overflow .
+docker build -t conda-stack-overflow . # you can provide your custom name after -t
 ```
 
 ## Creating a container
@@ -20,7 +20,7 @@ docker build -t conda-stack-overflow .
 Once the image has been built, you can create a container running the following command:
 
 ```bash
-docker run --volume /host/path/to/jupyter_notebooks:/opt/notebooks --rm -it -p 8888:8888 --name condasflow conda-stack-overflow
+docker run --volume /host/path/to/jupyter_notebooks:/opt/notebooks --rm -it -p 8888:8888 --name condasflow conda-stack-overflow # you can also provide your custom name after --name
 ```
 
 Using `--volume` allows us to persist data once the container has been removed. Please, provide your custom
