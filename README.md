@@ -27,6 +27,12 @@ Using `--volume` allows us to persist data once the container has been removed. 
 path to a directory that will be bind with the container `/opt/notebooks`. Using `--rm` tells Docker
 to remove the container once this is stopped. Using `--name` allows us to give a name to our container.
 
+If you want to use your current directory as your host directory you can run the following command:
+
+```bash
+docker run --volume $(pwd):/opt/notebooks --rm -it -p 8888:8888 --name condasflow conda-stack-overflow
+```
+
 ## Running a command while our container is running
 
 If you have to run a command, e.g, you need to install a JS or Python dependency. In order to start
